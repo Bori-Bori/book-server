@@ -1,6 +1,18 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
+# etc
+file-system.probe
+executionHistory.bin
+executionHistory.lock
+fileHashes.bin
+fileHashes.lock
+resourceHashesCache.bin
+buildOutputCleanup.lock
+outputFiles.bin
+application.yml
+previous-compilation-data.bin
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -75,3 +87,7 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+.gradle/7.5.1/executionHistory/executionHistory.lock
+.gradle/7.5.1/executionHistory/executionHistory.lock
+.gradle/7.5.1/fileHashes/fileHashes.lock
+.gitignore
