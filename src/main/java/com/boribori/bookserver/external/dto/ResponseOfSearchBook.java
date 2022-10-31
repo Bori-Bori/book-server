@@ -1,7 +1,6 @@
 package com.boribori.bookserver.external.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.List;
 public class ResponseOfSearchBook {
 
     private List<Item> item;
-    private SubInfo subInfo;
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -27,9 +25,6 @@ public class ResponseOfSearchBook {
         private String categoryName;
         private String publisher;
         private boolean adult;
-
-
-
     }
 
     @Data
