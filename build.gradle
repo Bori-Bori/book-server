@@ -23,6 +23,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation("io.netty:netty-resolver-dns-native-macos:4.1.79.Final:osx-aarch_64")
+	implementation 'com.google.code.gson:gson:2.9.0'
 }
 
 tasks.named('test') {
