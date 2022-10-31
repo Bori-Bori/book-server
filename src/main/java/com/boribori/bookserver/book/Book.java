@@ -1,15 +1,12 @@
 package com.boribori.bookserver.book;
 
 import com.boribori.bookserver.external.dto.ResponseOfSearchBook;
-import com.boribori.bookserver.external.dto.ResponseOfSearchBooks;
 import lombok.*;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
-import static com.boribori.bookserver.external.dto.ResponseOfSearchBook.*;
 
 
 @Getter
@@ -44,7 +41,7 @@ public class Book {
     private int page;
 
     //출간일
-    private LocalDateTime pubDate;
+    private LocalDate pubDate;
 
     //성인여부
     private boolean adult;
@@ -52,7 +49,7 @@ public class Book {
     @Builder(access = AccessLevel.PRIVATE)
     private Book(String isbn, String title, String author, String description,
                  String imagePath, int price, String publisher,
-                 int page, LocalDateTime pubDate, boolean adult){
+                 int page, LocalDate pubDate, boolean adult){
         this.isbn = isbn;
         this.title = title;
         this.author = author;
@@ -67,7 +64,6 @@ public class Book {
     }
 
     public static Book of(ResponseOfSearchBook response){
-        DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return Book.builder()
                 .title(response.getItem().get(0).getTitle())
                 .author(response.getItem().get(0).getAuthor())
@@ -78,7 +74,7 @@ public class Book {
                 .publisher(response.getItem().get(0).getPublisher())
                 .price(response.getItem().get(0).getPriceStandard())
                 .adult(response.getItem().get(0).isAdult())
-                .pubDate(LocalDateTime.parse(response.getItem().get(0).getPubDate()))
+                .pubDate(LocalDate.parse(response.getItem().get(0).getPubDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")))
                 .build();
     }
 
