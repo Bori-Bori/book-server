@@ -1,14 +1,19 @@
 package com.boribori.bookserver.book.dto.request;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
-@Builder
-@Getter
+
+@Data
 public class RequestOfGetBooks {
 
-    private String title;
-    private int start;
-    private int maxResults;
+    private String query = "황제";
+    private int start = 1;
+    private int maxResults = 5;
+    private String queryType = "Keyword"; //Keyword, Title, Author, Publisher
+
+    private String cover = "Big";
+
+    private String output = "js";
+
 
 }
