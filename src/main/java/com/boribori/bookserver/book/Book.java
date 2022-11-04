@@ -46,10 +46,19 @@ public class Book {
     //성인여부
     private boolean adult;
 
+    //국내 국외
+    private String category1;
+
+    //분야
+    private String category2;
+
+    //분야 상세
+    private String category3;
+
     @Builder(access = AccessLevel.PRIVATE)
     private Book(String isbn, String title, String author, String description,
                  String imagePath, int price, String publisher,
-                 int page, LocalDate pubDate, boolean adult){
+                 int page, LocalDate pubDate, boolean adult, String category1, String category2, String category3){
         this.isbn = isbn;
         this.title = title;
         this.author = author;
@@ -60,10 +69,14 @@ public class Book {
         this.page = page;
         this.pubDate = pubDate;
         this.adult = adult;
+        this.category1 = category1;
+        this.category2 = category2;
+        this.category3 = category3;
 
     }
 
     public static Book of(ResponseOfSearchBook response){
+        String[] arr = response.getItem().get(0).getCategoryName().split(">");
         return Book.builder()
                 .title(response.getItem().get(0).getTitle())
                 .author(response.getItem().get(0).getAuthor())
@@ -75,6 +88,9 @@ public class Book {
                 .price(response.getItem().get(0).getPriceStandard())
                 .adult(response.getItem().get(0).isAdult())
                 .pubDate(LocalDate.parse(response.getItem().get(0).getPubDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")))
+                .category1(arr[0])
+                .category2(arr[1])
+                .category3(arr[2])
                 .build();
     }
 
