@@ -1,15 +1,7 @@
 package com.boribori.bookserver.external.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -20,6 +12,7 @@ public class ResponseOfSearchBooks {
     public List<Item> item;
     public int startIndex;
     public int itemsPerPage;
+    public int totalResults;
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown =true)
