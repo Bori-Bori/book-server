@@ -1,0 +1,9 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: book
+      contact-points: localhost
+      port: 9042
+      schema-action: CREATE_IF_NOT_EXISTS
+server:
+  port: 8080
