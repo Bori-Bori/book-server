@@ -47,7 +47,7 @@ $ nohup java -jar ~.jar & /dev/null
 
 <img width="864" alt="스크린샷 2022-12-01 오후 8 52 50" src="https://user-images.githubusercontent.com/79268661/205050747-ad214e64-09f0-42da-9052-4482c84119a8.png">
 
-# Reference
+# 🔗 Reference
 * [✅ Book-Server Repository](https://github.com/Bori-Bori/book-server)
 
 * [✅ Auth-Server Repository](https://github.com/Bori-Bori/auth-server)
