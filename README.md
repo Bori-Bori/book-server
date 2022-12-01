@@ -1,7 +1,7 @@
-# book-server
+# 🤗 book-server
 boribori book-server
 
-# How to Run?
+# 🧐 How to Run?
 
 1. First Step
 
@@ -25,13 +25,13 @@ $ ./gradlew build
 $ nohup java -jar ~.jar & /dev/null
 ```
 
-# How to Contribute?
+# 🌼 How to Contribute?
 
 1. Register Issue
 2. editing code
 3. create pull & request
 
-# Server Functions
+# 🔎 Server Functions
 
 ## 책 검색
 
@@ -42,6 +42,10 @@ $ nohup java -jar ~.jar & /dev/null
 
 ## 책 상세조회
 책 1개를 조회하는 기능입니다.
+
+# 🏢 Server Architecture
+
+<img width="864" alt="스크린샷 2022-12-01 오후 8 52 50" src="https://user-images.githubusercontent.com/79268661/205050747-ad214e64-09f0-42da-9052-4482c84119a8.png">
 
 # Reference
 * [✅ Book-Server Repository](https://github.com/Bori-Bori/book-server)
